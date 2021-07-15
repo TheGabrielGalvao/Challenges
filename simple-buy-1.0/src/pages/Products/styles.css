@@ -1,0 +1,57 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.products{
+    height: 80vh;
+    width: 80vw;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+header{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+header h1{
+    color: gray;
+    margin: 0.5rem 0;
+}
+
+header hr{
+    margin-bottom: 1rem;
+    border: 0.5px solid #ebebeb;
+}
+
+@media (min-width:) (max-width:1399px){
+    .products{
+        height: 50vh;
+    }
+}
+
+@media(min-width:1140px) and (max-width:1379px){
+    .products{
+        height: 130vh;
+    }
+}    
+
+@media(max-width:1599px){
+    .products{
+        height: 60vh;
+    }
+}
+
+@media(min-width:1600px){
+    .products{
+        height: 55vh;
+    }
+}

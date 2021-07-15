@@ -1,0 +1,111 @@
+.box-area{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 2px;
+    background:rgba(white,white,white, 0.78);
+    justify-content: flex-start;
+    line-height: 1.8rem;
+    transition: all 0.5s;
+  }
+
+  
+  .box-area p:nth-child(2){
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+ .phantom{
+    opacity: 0;
+  }
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 2rem;
+    justify-content: center;
+    padding: 1rem 1rem;
+  }
+ 
+  
+
+  .card span img{
+      width: 100%;
+  }
+
+  .card p{
+      font-size: 12px;
+  }
+  
+
+  .card:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .card:hover .phantom{
+    opacity: 1;
+  }
+
+  .card:hover div.box-area{
+    background: rgba(255,255,255, 0.4);
+    cursor: pointer;
+    z-index: 5;
+    margin-top: -7rem;    
+    
+  }
+  
+  
+  .card:hover img{
+    opacity: 1;
+    z-index: 999;
+  }
+  
+  .card:over img{
+    transform: scale(1.0);
+    opacity: 1;
+    z-index: 999;
+  }
+  
+  .card:hover button.phantom {
+    opacity: 1;
+  }
+
+/* @media(max-width:799px){
+  .card{
+    max-width: 11rem;
+    padding: 1rem 0.5rem;
+  }
+}   */
+
+@media(min-width:600px) and (max-width:787px){
+  .card{
+    max-width: 10rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media(min-width:788px) and (max-width:1399px){
+  .card{
+    max-width: 11rem;
+    padding: 1rem 0.5rem;
+  }
+}
+
+
+@media(min-width:1400px) and (max-width:1699px){
+  .card{
+    max-width: 13rem;
+  }
+}
+
+
+@media(min-width:1700px){
+  .card{
+    max-width: 18rem;
+  }
+}

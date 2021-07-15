@@ -1,0 +1,52 @@
+.counter{
+    display: flex;
+    flex-direction: column;
+    flex-direction: initial;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+
+  div.form{
+      display: flex;
+      flex: 1 ;
+      justify-content: center;              
+  }
+  
+  .item{
+    text-align: center;
+    padding: 1rem 0.1rem;
+    border: 1px solid lightgray;
+    border-radius: 0.3rem;
+    margin: 0 auto;
+  }
+  
+  
+  @media (max-width:787px){
+    .item{
+      width: 4rem;
+      margin: 0 0.5rem;
+    }
+   }
+
+  @media (min-width:788px) and (max-width:1599px){
+   .item{
+     width: 5rem;
+     margin: 0 0.5rem;
+   }
+  }
+
+  @media (min-width:1600px){
+   .item{
+     width: 8rem;
+     margin: 0 0.5rem;
+   }
+  }
+
+  @media (min-width:1800px){
+    .item{
+      width: 10rem;
+      margin: 0 0.5rem;
+    }
+   }

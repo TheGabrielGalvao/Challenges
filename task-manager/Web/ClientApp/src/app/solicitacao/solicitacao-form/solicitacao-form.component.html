@@ -1,0 +1,92 @@
+<h1>{{modoEdicao? "Edição de": "Nova"}} Solicitação</h1>
+
+<form class="form-horizontal" novalidate (ngSubmit)="save()" [formGroup]="formGroup">
+  <div class="row container-fluid form-group">
+    <div class="col-md-2" [ngClass]="{'has-error': (formGroup.get('numero').touched || formGroup.get('numero').dirty)
+        && !formGroup.get('numero').valid }">
+      <label for="numero" class=" control-label">Número</label>
+
+      <input type="number" id="numero" class="form-control" required formControlName="numero" />
+      <span class="help-block" *ngIf="(formGroup.get('numero').touched || formGroup.get('numero').dirty)
+            && formGroup.get('numero').errors">
+        <span *ngIf="formGroup.get('numero').errors.required"></span>
+      </span>
+    </div>
+
+    <div class="col-md-9" [ngClass]="{'has-error': (formGroup.get('previsao').touched || formGroup.get('previsao').dirty)
+        && !formGroup.get('previsao').valid }">
+      <label for="data" class="control-label" >Previsão: Data/Hora</label>
+
+      <div class="row">
+        <div class="col-md-3">
+          <input type="date" id="previsao" class="form-control" required formControlName="previsao" />
+          <span class="help-block" *ngIf="(formGroup.get('previsao').touched || formGroup.get('previsao').dirty)
+              && formGroup.get('previsao').errors">
+            <span *ngIf="formGroup.get('previsao').errors.required"></span>
+          </span>
+        </div>
+        <div class="col-md-3" style="left:-2%">
+          <input type="time" id="previsao" class="form-control" required formControlName="previsao" />
+          <span class="help-block" *ngIf="(formGroup.get('previsao').touched || formGroup.get('previsao').dirty)
+              && formGroup.get('previsao').errors">
+            <span *ngIf="formGroup.get('previsao').errors.required"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': (formGroup.get('responsavel').touched || formGroup.get('responsavel').dirty)
+   && !formGroup.get('responsavel').valid }">
+    <label for="responsavel" class="col-md-2 control-label">Responsável</label>
+
+    <div class="col-md-7">
+      <input type="text" id="responsavel" class="form-control" required formControlName="responsavel" />
+      <span class="help-block" *ngIf="(formGroup.get('responsavel').touched || formGroup.get('responsavel').dirty)
+     && formGroup.get('responsavel').errors">
+        <span *ngIf="formGroup.get('responsavel').errors.required"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="{'has-error': (formGroup.get('status').touched || formGroup.get('status').dirty)
+   && !formGroup.get('status').valid }">
+    <label for="status" class="col-md-2 control-label">Status</label>
+
+    <div class="col-md-8">
+      
+      <select id="status" class="form-control" required formControlName="status" >
+          <option value="1">Aguardando Atendimento</option>
+          <option value="2">Atendendo</option>
+          <option value="3">Testando</option>
+          <option value="4">Encerrado</option> 
+      </select>
+      <span class="help-block" *ngIf="(formGroup.get('status').touched || formGroup.get('status').dirty)
+     && formGroup.get('status').errors">
+        <span *ngIf="formGroup.get('status').errors.required"></span>
+      </span>
+    </div>
+  </div>
+  <div class="form-group" [ngClass]="{'has-error': (formGroup.get('descricao').touched || formGroup.get('descricao').dirty)
+   && !formGroup.get('descricao').valid }">
+    <label for="descricao" class="col-md-2 control-label">Descrição</label>
+
+    <div class="col-md-8">
+      <textarea type="text" id="descricao" class="md-textarea form-control" required formControlName="descricao"
+        rows="6"></textarea>
+      <span class="help-block" *ngIf="(formGroup.get('descricao').touched || formGroup.get('descricao').dirty)
+     && formGroup.get('descricao').errors">
+        <span *ngIf="formGroup.get('descricao').errors.required"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-froup">
+    <div class="col-md-4 col-md-offset-2">
+      <span>
+        <button class="btn btn-success" type="submit" [disabled]="!formGroup.valid">Salvar</button>
+        <button class="btn btn-danger" type="submit" [routerLink]='["/solicitacao"]'>Cancelar</button>
+      </span>
+    </div>
+  </div>
+</form>

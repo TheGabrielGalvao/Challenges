@@ -1,0 +1,73 @@
+footer h1{
+    color: gray;
+    margin: 0.5rem 0;
+}
+
+footer h2{
+    color: gray;
+    font-size: 1.7rem;
+}
+
+footer hr{
+    margin-bottom: 1rem;
+    border: 0.5px solid gray;
+}
+
+footer div{
+    text-align: right;
+}
+
+form{
+    display: inline;
+    width: 50%;
+}
+
+@media(max-width:599px){
+    footer{
+        margin: 325rem auto;
+        width: 80vw;
+    }
+
+    
+}
+
+@media (min-width:600px) and (max-width:682px){
+  footer{
+      margin: 180% auto;
+      width: 80vw;
+  }
+}
+
+
+@media (min-width:683px) and (max-width:787px){
+    footer{
+        
+        margin: 120% auto;
+        width: 80vw;
+    }
+}
+
+@media(min-width:788px){
+    footer{
+        flex-wrap: wrap;
+        margin: 100% auto;
+        width: 80vw;
+        justify-content: flex-start;
+    }
+}
+
+
+
+@media (min-width:1050px){
+    footer{
+        margin: 30% auto;
+        width: 80vw;
+    }
+}
+
+@media (min-width:1600px){
+    footer{
+        margin:30% auto;
+        width: 80vw;
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "ConnectionStrings": {
+
+    "AvaliacaoSqlServer": "Server=DESKTOP-BLS8GAM;Database=avaliacao;User Id=sa; Password=1234;",
+    "AvaliacaoMysql": "server=localhost;uid=root;pwd=1234;database=avaliacao"
+  }
+}

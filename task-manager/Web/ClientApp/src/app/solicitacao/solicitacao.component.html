@@ -1,0 +1,37 @@
+<h3>Solicitações</h3>
+
+<button [routerLink]='["/solicitacao-incluir"]' class="btn btn-primary">Incluir Solicitação</button>
+
+<p *ngIf="!(solicitacoes && solicitacoes.length)">
+  Nemnhum registro encontrado!
+</p>
+
+<table class="table" *ngIf="(solicitacoes && solicitacoes.length)">
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Descrição</th>
+      <th>Previsão</th>
+      <th>Responsável</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let solicitacao of solicitacoes" [ngSwitch]="solicitacao.status">
+    <tr>
+      <td>{{solicitacao.numero}}</td>
+      <td>{{solicitacao.descricao}}</td>
+      <td>{{solicitacao.previsao}}</td>
+      <td>{{solicitacao.responsavel}}</td>
+      <td *ngSwitchCase="'1'">Aguardando Atendimento</td>
+      <td *ngSwitchCase="'2'">Atendendo</td>
+      <td *ngSwitchCase="'3'">Testando</td>
+      <td *ngSwitchCase="'4'">Encerrado</td>
+      <td *ngSwitchDefault>Não Definido</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]='["/solicitacao-editar/" + solicitacao.id]'>Editar</button>
+        <button class="btn btn-danger" (click)="delete(solicitacao)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
